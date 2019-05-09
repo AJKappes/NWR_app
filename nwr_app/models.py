@@ -18,4 +18,4 @@ class pdf_input(models.Model):
 class pdf_input_form(ModelForm):
     class Meta:
         model = pdf_input
-	fields = '__all__'
+        fields = '__all__'
