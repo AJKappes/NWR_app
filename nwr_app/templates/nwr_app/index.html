@@ -1,3 +1,6 @@
+<head>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
 <form method='post' action=''>{% csrf_token %}
     <h2>Nutrient Waste Recycling Model</h2>
 
@@ -6,11 +9,10 @@
     <!--<p>Enter a celsius value to convert to fahrenheit: {{ form.cel_input }}-->
     <p>Enter in values below for computing Gamma$(x, \theta, k)$ density<p>
     <table>
-	<tr><td> {{ form.x }} </td></tr>
-	<tr><td> {{ form.theta }} </td></tr>
-	<tr><td> {{ form.k }} </td></tr>
+	<tr><td> {{ form.x }} </td><td>Random variable, $x$ > 0</td></tr>
+	<tr><td> {{ form.theta }} </td><td>Scale parameter, $\theta$ > 0</td></tr>
+	<tr><td> {{ form.k }} </td><td>Shape parameter, $k$ > 0</td></tr>
  	<tr><td></td></tr>
     </table>
     <input type='submit' value='Calculate' /></p>
-<footer><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script></footer>
 </form>
