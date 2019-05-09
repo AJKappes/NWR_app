@@ -29,4 +29,8 @@ def present_output(form):
     k = form.k
     s = gamma_pdf(x, theta, k)
     #return HttpResponse('Degree conversion function: Fahrenheit(%s C) = %s F' % (cel_input, s))
-    return HttpResponse('Gamma%s = %s' % ((x, theta, k), s))
+    #return HttpResponse('Gamma%s = %s' % ((x, theta, k), s))
+    response = HttpResponse()
+    response.write('<head><script src=\'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML\' async></script></head>')
+    response.write('Gamma\((x, \\theta, k)\) for input values Gamma%s = %s' % ((x, theta, k), s))
+    return response
