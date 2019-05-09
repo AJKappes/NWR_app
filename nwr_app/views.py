@@ -29,4 +29,4 @@ def present_output(form):
     k = form.k
     s = gamma_pdf(x, theta, k)
     #return HttpResponse('Degree conversion function: Fahrenheit(%s C) = %s F' % (cel_input, s))
-    return HttpResponse('Gamma(x, theta, k) for Gamma%s = %s' % ((x, theta, k), s))
+    return HttpResponse('Gamma%s = %s' % ((x, theta, k), s))
