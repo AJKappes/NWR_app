@@ -10,13 +10,13 @@ from scipy.special import gamma
 def index(request):
     if request.method == 'POST':
         #form = temp_input_form(request.POST)
-	form = pdf_input_form(request.POST)
+        form = pdf_input_form(request.POST)
         if form.is_valid():
             form = form.save(commit=False)
             return present_output(form)
     else:
         #form = temp_input_form()
-	form = pdf_input_form()
+        form = pdf_input_form()
 
     return render(request, 'nwr_app/index.html', {'form': form})
 
