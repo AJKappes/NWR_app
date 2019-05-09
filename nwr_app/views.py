@@ -32,5 +32,5 @@ def present_output(form):
     #return HttpResponse('Gamma%s = %s' % ((x, theta, k), s))
     response = HttpResponse()
     response.write('<head><script src=\'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML\' async></script></head>')
-    response.write('Gamma\((x, \\theta, k)\) for input values Gamma%s = %s' % ((x, theta, k), s))
+    response.write('\(f(x; \\theta, k)\) for input values %s = %s' % ((x, theta, k), s))
     return response
