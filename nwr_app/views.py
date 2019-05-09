@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from nwr_app.models import pdf_input_form
 from nwr_app.nwr_model import gamma_pdf
 from scipy.special import gamma
+import numpy as np
 
 
 def index(request):
