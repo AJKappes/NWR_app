@@ -1,5 +1,5 @@
 django
 gunicorn
 django-heroku
-scipy
+scipy.special
 numpy
