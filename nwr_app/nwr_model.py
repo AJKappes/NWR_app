@@ -1,5 +1,6 @@
 # Python file for nutrient waste recycling model
 from scipy.special import gamma
+import numpy as np
 
 def convert_temp(cel_temp):
     far_temp = cel_temp * 9/5 + 32
