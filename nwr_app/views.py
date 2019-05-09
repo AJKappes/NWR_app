@@ -23,9 +23,9 @@ def index(request):
 def present_output(form):
     #cel_input = form.cel_input
     #s = convert_temp(cel_input)
-    x_input = form.x
-    theta_input = form.theta
-    k_input = form.k
-    s = gamma_pdf(x_input, theta_input, k_input)
+    x = form.x
+    theta = form.theta
+    k = form.k
+    s = gamma_pdf(x, theta, k)
     #return HttpResponse('Degree conversion function: Fahrenheit(%s C) = %s F' % (cel_input, s))
-    return HttpResponse('Gamma(x, theta, k) for Gamma(%s) = %s' % (x_input, theta_input, k_input, s))
+    return HttpResponse('Gamma(x, theta, k) for Gamma(%s) = %s' % ((x, theta, k), s))
