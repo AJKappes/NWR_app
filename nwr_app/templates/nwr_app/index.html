@@ -3,6 +3,13 @@
 
     <p><em>This is a test version for a input-oriented, computational web application</em></p>
 
-    <p>Enter a celsius value to convert to fahrenheit: {{ form.cel_input }}
-    <input type='submit' value='convert' /></p>
+    <!--<p>Enter a celsius value to convert to fahrenheit: {{ form.cel_input }}-->
+    <p>Enter in values below for computing a Gamma(x, $\theta$, $k$) density<p>
+    <table>
+	<tr><td> {{ form.x_input }} </td></tr>
+	<tr><td> {{ form.theta_input }} </td></tr>
+	<tr><td> {{ form.k_input }} </td></tr>
+ 	<tr><td></td></tr>
+    </table>
+    <input type='submit' value='calculate' /></p>
 </form>
