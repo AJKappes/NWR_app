@@ -1,6 +1,6 @@
 #### Nutrient Recycling and Diversion of Waste to Energy 
 
-*Note: the current web application is in beta for testing user multiple-input computations and simply provides a $Gamma(\theta, k)$ density $f(x:, \theta, k)$ for user supplied values.*
+*Note: the current web application is in beta for testing user multiple-input computations and simply provides a* $Gamma(\theta, k)$ *density* $f(x:, \theta, k)$ *for user supplied values.*
 
 *Beta link* [here](https://nutrient-waste-recycling.herokuapp.com/nwr_app/)
 
