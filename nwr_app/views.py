@@ -4,8 +4,8 @@ from django.http import HttpResponse
 #from nwr_app.nwr_model import convert_temp
 from nwr_app.models import pdf_input_form
 from nwr_app.nwr_model import gamma_pdf
-from scipy.special import gamma
-import numpy as np
+#from scipy.special import gamma
+#import numpy as np
 
 
 def index(request):
@@ -32,5 +32,5 @@ def present_output(form):
     #return HttpResponse('Gamma%s = %s' % ((x, theta, k), s))
     response = HttpResponse()
     response.write('<head><script src=\'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML\' async></script></head>')
-    response.write('\(f(x; \\theta, k)\) for input values %s = %s' % ((x, theta, k), s))
+    response.write('For input values {\(x, \\theta, k\)} = %s, \(f(x; \\theta, k)\) = %s' % ({x, theta, k}, s))
     return response
