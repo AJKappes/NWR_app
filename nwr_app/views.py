@@ -36,5 +36,6 @@ def present_output(form):
     #return HttpResponse('Gamma%s = %s' % ((x, theta, k), s))
     response = HttpResponse()
     response.write('<head><script src=\'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML\' async></script></head>')
-    response.write('For input values [blood, fish byproduct, paper pulp, OB, GT, manure)] = [{}, {}, {}, {}, {}, {}], phosphorus (kg) = {}'.format(blood, fish_by, paper_pulp, ob, gt, manure, s))
+    response.write(
+'<p>For input values {{blood, fish byproduct, paper pulp, OB, GT, manure}} = {{{}, {}, {}, {}, {}, {}}} gallons</p> <p></p> <p>AD phosphorus ouput = {} kgs</p>'.format(blood, fish_by, paper_pulp, ob, gt, manure, s))
     return response

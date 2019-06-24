@@ -5,11 +5,11 @@ src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-M
 </head>
 <form method='post' action=''>{% csrf_token %}
     <h2>Nutrient Waste Recycling Model</h2>
-
-    <p><em>This is a test version for a input-oriented, computational web application</em></p>
+    <p>The nutrient waste recycling model computes anaerobic digestion (AD) nutrient output based off user feedstock and manure inputs.</p> 
 
     <!--<p>Enter a celsius value to convert to fahrenheit: {{ form.cel_input }}-->
-    <p>Enter feedstock and manure input values below for computing anaerobic digestion phosphorus (kg) output.<p>
+    <p><em>Phosphorus Output</em></p>
+    <p>Enter input values below for computing AD phosphorus (kg) output.<p>
     <table>
 	<tr><td> {{form.blood}} </td><td>Blood (gallons)</td></tr>
 	<tr><td> {{form.fish_by}} </td><td>Fish Byproduct (gallons)</td></tr>

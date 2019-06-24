@@ -35,7 +35,7 @@ def phos_func(*args):
     for i in range(len(coefs)):
         out_list.append(3.79 * coefs[i] * args[i])
 
-    phos_out = sum(out_list)
+    phos_out = round(sum(out_list), 3)
 
     return phos_out
 
