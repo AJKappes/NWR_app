@@ -9,11 +9,14 @@ src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-M
     <p><em>This is a test version for a input-oriented, computational web application</em></p>
 
     <!--<p>Enter a celsius value to convert to fahrenheit: {{ form.cel_input }}-->
-    <p>Enter in values below for computing a Gamma\((\theta, k)\) density \(f(x; \theta, k)\) for \(x\).<p>
+    <p>Enter feedstock and manure input values below for computing anaerobic digestion phosphorus (kg) output.<p>
     <table>
-	<tr><td> {{ form.x }} </td><td>Random variable, \(x\) > 0</td></tr>
-	<tr><td> {{ form.theta }} </td><td>Scale parameter, \(\theta\) > 0</td></tr>
-	<tr><td> {{ form.k }} </td><td>Shape parameter, \(k\) > 0</td></tr>
+	<tr><td> {{form.blood}} </td><td>Blood (gallons)</td></tr>
+	<tr><td> {{form.fish_by}} </td><td>Fish Byproduct (gallons)</td></tr>
+	<tr><td> {{form.paper_pulp}} </td><td>Paper Pulp (gallons)</td></tr>
+    <tr><td> {{form.ob}} </td><td>Out-of-Date Beverages (gallons)</td></tr>
+    <tr><td> {{form.gt}} </td><td>Grease Trap Waste (gallons)</td></tr>
+    <tr><td> {{form.manure}} </td><td>Manure (gallons)</td></tr>
  	<tr><td></td></tr>
     </table>
     <input type='submit' value='Calculate' /></p>
