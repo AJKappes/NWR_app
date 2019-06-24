@@ -20,8 +20,6 @@ import pandas as pd
 
 # phosphorus #
 
-ex_data = pd.read_csv('/home/ajkappes/research/agri/Nutrient_Waste_Recycling/ADOPTfeedstocks.csv')
-
 def phos_func(*args):
     '''
     Function takes feedstock and manure volume arguments and computes phosphorus nutrient outflow
