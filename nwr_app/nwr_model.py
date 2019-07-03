@@ -26,6 +26,7 @@ def phos_func(*args):
     in kg/time step.
 
     3.79 constant converts gallon to liter
+    0.9112 nutrient portion remaining post liquid-solid seperation after AD output to lagoon
     '''
     coefs = [.035, .107, .34, .011, .13, .023]
     out_list = []
@@ -33,7 +34,7 @@ def phos_func(*args):
     for i in range(len(coefs)):
         out_list.append(3.79 * coefs[i] * args[i])
 
-    phos_out = round(sum(out_list), 3)
+    phos_out = round(0.9112 * sum(out_list), 3)
 
     return phos_out
 
