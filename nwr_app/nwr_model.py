@@ -20,13 +20,14 @@ import pandas as pd
 
 # phosphorus #
 
-def phos_func(*args):
+def phos_func(*args, loc, soil_test, acres):
     '''
     Function takes feedstock and manure volume arguments and computes phosphorus nutrient outflow
     in kg/time step.
 
     3.79 constant converts gallon to liter
     0.9112 nutrient portion remaining post liquid-solid seperation after AD output to lagoon
+    2.205 constant converts kilogram to pound
     '''
     coefs = [.035, .107, .34, .011, .13, .023]
     out_list = []
@@ -34,9 +35,71 @@ def phos_func(*args):
     for i in range(len(coefs)):
         out_list.append(3.79 * coefs[i] * args[i])
 
-    phos_out = round(0.9112 * sum(out_list), 3)
+    phos_out = round(2.205 * 0.9112 * sum(out_list), 3)
+    lb_acre = round(phos_out / acres, 3)
 
-    return phos_out
+    if loc == 'West' or loc == 'west':
+        if soil_test < 20:
+            p_index = 'Low'
+            rec_p_app = '0-300'
+            if lb_acre > 300:
+                app_decision = 'Do not apply'
+            else:
+                app_decision = 'Apply'
 
-#phos_func(10, 15, 20, 25, 30, 35)
+        if 20 <= soil_test < 40:
+            p_index = 'Medium'
+            rec_p_app = '0-200'
+            if lb_acre > 200:
+                app_decision = 'Do not apply'
+            else:
+                app_decision = 'Apply'
+
+        if 40 <= soil_test <= 100:
+            p_index = 'High'
+            rec_p_app = '0-30'
+            if lb_acre > 30:
+                app_decision = 'Do not apply'
+            else:
+                app_decision = 'Apply'
+
+        if soil_test > 100:
+            p_index = 'Excessive'
+            rec_p_app = '0'
+            app_decision = 'Do not apply'
+
+    if loc == 'East' or loc == 'east':
+        if soil_test < 10:
+            p_index = 'Low'
+            rec_p_app = '0-300'
+            if lb_acre > 300:
+                app_decision = 'Do not apply'
+            else:
+                app_decision = 'Apply'
+
+        if 10 <= soil_test < 25:
+            p_index = 'Medium'
+            rec_p_app = '0-200'
+            if lb_acre > 200:
+                app_decision = 'Do not apply'
+            else:
+                app_decision = 'Apply'
+
+        if 25 <= soil_test <= 50:
+            p_index = 'High'
+            rec_p_app = '0-30'
+            if lb_acre > 30:
+                app_decision = 'Do not apply'
+            else:
+                app_decision = 'Apply'
+
+        if soil_test > 50:
+            p_index = 'Excessive'
+            rec_p_app = '0'
+            app_decision = 'Do not apply'
+
+    return [phos_out, lb_acre, p_index, rec_p_app, app_decision]
+
+
+#phos_func(10, 15, 20, 25, 30, 35, loc='west', soil_test=51, acres=4)
 

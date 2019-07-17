@@ -31,11 +31,9 @@ def present_output(form):
     ob = form.ob
     gt = form.gt
     manure = form.manure
-    s = phos_func(blood, fish_by, paper_pulp, ob, gt, manure)
-    #return HttpResponse('Degree conversion function: Fahrenheit(%s C) = %s F' % (cel_input, s))
-    #return HttpResponse('Gamma%s = %s' % ((x, theta, k), s))
+    s = phos_func(blood, fish_by, paper_pulp, ob, gt, manure, loc=form.loc, soil_test=form.soil_test, acres=form.acres)
     response = HttpResponse()
     response.write('<head><script src=\'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML\' async></script></head>')
     response.write(
-'<p>For input values {{blood, fish byproduct, paper pulp, OB, GT, manure}} = {{{}, {}, {}, {}, {}, {}}} gallons,</p> <p></p> <p>AD phosphorus ouput is {} kgs.</p>'.format(blood, fish_by, paper_pulp, ob, gt, manure, s))
+'<p>For input values {{blood, fish byproduct, paper pulp, OB, GT, manure, location, soil test, acres}} = {{{}, {}, {}, {}, {}, {}, {}, {}, {}}}:</p> <p></p> <p>Total AD phosphorus ouput is {} lbs.</p> <p></p> <p>Based on your soil test, your phosphorus index categorization is: <em>{}</em>.</p> <p></p> <p>Per your phosphorus index categorization, the recommended range of phosphorus application is {} lbs/acre.</p> <p>Phosphorus lbs/acre from AD output is {}.</p> <p></p> <p>Phosphorus application decision is: <em>{}</em>.</p>'.format(blood, fish_by, paper_pulp, ob, gt, manure, form.loc, form.soil_test, form.acres, s[0], s[2], s[3], s[1], s[4]))
     return response

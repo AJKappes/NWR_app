@@ -20,6 +20,9 @@ class phos_input(models.Model):
     ob = models.FloatField()
     gt = models.FloatField()
     manure = models.FloatField()
+    loc = models.CharField(max_length=4)
+    soil_test = models.FloatField()
+    acres = models.FloatField()
 
 class phos_input_form(ModelForm):
     class Meta:
