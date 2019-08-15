@@ -4,4 +4,4 @@ Anaerobic digestion (AD) produces biogas from various agricultural and industria
 
 Producers gain increased efficiency of AD use when being able to evaluate different production scenarios based on varying inputs. Policy-makers also benefit from improved understanding of AD use as a sustainable waste management practice, as well as its production of renewable energy, and can better design and support policies that promote AD adoption.
 
-*AD Phosphorus output and application recommendation* [*model*](https://nutrient-waste-recycling.herokuapp.com/nwr_app/)
+*AD Phosphorus output and application recommendation* [*model*](https://nwrapp.herokuapp.com/nwr_app/)
