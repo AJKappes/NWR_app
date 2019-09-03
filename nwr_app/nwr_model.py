@@ -30,13 +30,19 @@ def phos_func(*args, loc, soil_test, acres):
     2.205 constant converts kilogram to pound
     '''
     coefs = [.035, .107, .34, .011, .13, .023]
+    # [blood, fish_by, paper_pulp, ob, gt, manure]
+    tip_fees = [0.03609, 0.05, 0.0415, 0.05, 0.05, 0]
+    # [blood, pulp] tipping fees
     out_list = []
+    rev_list = []
 
     for i in range(len(coefs)):
         out_list.append(3.79 * coefs[i] * args[i])
+        rev_list.append(tip_fees[i] * args[i])
 
     phos_out = round(2.205 * 0.9112 * sum(out_list), 3)
     lb_acre = round(phos_out / acres, 3)
+    input_rev = round(sum(rev_list), 3)
 
     if loc == 'West' or loc == 'west':
         if soil_test < 20:
@@ -98,7 +104,7 @@ def phos_func(*args, loc, soil_test, acres):
             rec_p_app = '0'
             app_decision = 'Do not apply'
 
-    return [phos_out, lb_acre, p_index, rec_p_app, app_decision]
+    return [phos_out, lb_acre, p_index, rec_p_app, app_decision, input_rev]
 
 
 #phos_func(10, 15, 20, 25, 30, 35, loc='west', soil_test=51, acres=4)

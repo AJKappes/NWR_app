@@ -6,7 +6,6 @@ src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-M
 <form method='post' action=''>{% csrf_token %}
     <h2>Nutrient Waste Recycling Model</h2>
     <p>The nutrient waste recycling model computes anaerobic digestion (AD) nutrient output from user feedstock and manure inputs.</p> 
-
     <!--<p>Enter a celsius value to convert to fahrenheit: {{ form.cel_input }}-->
     <p><em>Phosphorus Output</em></p>
     <p>Enter input values below for computing AD phosphorus output (lbs) and recommended lbs/acre crop application.</p>
@@ -22,6 +21,6 @@ src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-M
     <tr><td> {{form.acres}} </td><td>Number of crop acres for phosphorus application</td></tr>
  	<tr><td></td></tr>
     </table>
-    <input type='submit' value='Calculate' /></p>
+    <input type='submit' value='Calculate'>
 </form>
 
