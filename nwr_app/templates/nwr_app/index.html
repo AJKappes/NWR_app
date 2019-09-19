@@ -5,10 +5,9 @@ src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-M
 </head>
 <form method='post' action=''>{% csrf_token %}
     <h2>Nutrient Waste Recycling Model</h2>
-    <p>The nutrient waste recycling model computes anaerobic digestion (AD) nutrient output from user feedstock and manure inputs.</p> 
+    <p>This model computes anaerobic digestion (AD) phosphorus output for lagoon application and energy production in kilowatt hours from user feedstock and manure inputs. The model also computes total revenue generated from tipping fees.</p> 
     <!--<p>Enter a celsius value to convert to fahrenheit: {{ form.cel_input }}-->
-    <p><em>Phosphorus Output</em></p>
-    <p>Enter input values below for computing AD phosphorus output (lbs) and recommended lbs/acre crop application.</p>
+    <p>Enter input values below for computing AD phosphorus output (lbs) and recommended lbs/acre crop application. Energy production (kWh) and tipping fee revenue information is provided below phosphorus output and application recommendation.</p>
     <table>
 	<tr><td> {{form.blood}} </td><td>Blood (gallons)</td></tr>
 	<tr><td> {{form.fish_by}} </td><td>Fish Byproduct (gallons)</td></tr>
